@@ -1,0 +1,10 @@
+.videoContainer {
+    height: 75vh;
+    background-color: black;
+    overflow: hidden;
+}
+
+.videoContainer video {
+    object-fit: cover;
+    width: 100%;
+}

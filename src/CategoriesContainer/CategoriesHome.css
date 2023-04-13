@@ -1,0 +1,36 @@
+.categoriesHomeContainer {
+    display:flex;
+    gap: 1rem;
+    justify-content: center;
+    padding-bottom: 5rem;
+    padding-top: 3rem;
+}
+
+.categoriesCard {
+    width: 23%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.categoriesCard img {
+    object-fit: contain;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.categoriesCard img:hover {
+    transform: scale(1.1);
+}
+
+.categoriesCard h2 {
+    position: absolute;
+    color: white;
+    font-weight: 400;
+    top: 0;
+    left: 1rem;
+    font-size: 2rem;
+}

@@ -1,0 +1,59 @@
+.card {
+    position: relative;
+    width: 16%;
+    margin: 0 2rem;
+}
+
+.saleContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.likeBtnCardContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.productImage {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.productNameSaleContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.saleContainer p {
+    background-color: red;
+    color: white;
+    padding: 0.5rem 1rem;
+}
+
+.likeBtnCard {
+    width: 1.5rem;
+    margin-top: 1.2rem;
+}
+
+.productNameTitle {
+    font-weight: 400;
+    margin: 0.2rem 0;
+}
+
+.productColor {
+    font-weight: 100;
+    margin: 0;
+}
+
+.productSale {
+    font-weight: 400;
+    color: red;
+    margin: 0.2rem 0;
+}
+
+.productPrice {
+    font-weight: 100;
+    margin: 0;
+}

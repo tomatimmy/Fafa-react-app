@@ -1,0 +1,41 @@
+.postheader2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.navbar2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: -19rem;
+}
+
+.navbar2 a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: black;
+    transition: all 1s ease;
+}
+
+a:hover {
+    color: grey !important;
+}
+
+.navbar2 a h2 {
+    font-size: 1.2rem;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+.fafaDiv {
+    width: 20%;
+    margin-left: 1.5rem;
+}
+
+.fafaH2 {
+    font-weight: 400;
+}
