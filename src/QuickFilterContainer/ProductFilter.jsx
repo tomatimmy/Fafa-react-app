@@ -3,10 +3,10 @@ import { getProducts } from "../asyncmock";
 import "./QuickFilter.css"
 
 
-const genders = ['Male', 'Female'];
-const sizes = ['Small', 'Medium', 'Large', 'Extra-large'];
-const colors = ['Red', 'Blue', 'Black', 'Green'];
-const categories = ['Hoodies', 'Bags', 'Shirts', 'Sweatshirts', 'Hats']
+const genders = ['', 'Male', 'Female'];
+const sizes = ['', 'Small', 'Medium', 'Large', 'Extra-large'];
+const colors = ['', 'Red', 'Blue', 'Black', 'Green'];
+const categories = ['', 'Hoodies', 'Bags', 'Shirts', 'Sweatshirts', 'Hats']
 const likeBtn = "https://cdn-icons-png.flaticon.com/512/54/54966.png";
 
 function ProductFilter() {
@@ -46,7 +46,7 @@ function ProductFilter() {
                     <option value="">Gender</option>
                     {genders.map(gender => (
                         <option key={gender} value={gender}>
-                            {gender}
+                            {gender || 'All'}
                         </option>
                     ))}
                 </select>
@@ -59,7 +59,7 @@ function ProductFilter() {
                     <option value="">Size</option>
                     {sizes.map(size => (
                         <option key={size} value={size}>
-                            {size}
+                            {size || 'All'}
                         </option>
                     ))}
                 </select>
@@ -72,7 +72,7 @@ function ProductFilter() {
                     <option value="">Color</option>
                     {colors.map(color => (
                         <option key={color} value={color}>
-                            {color}
+                            {color || 'All'}
                         </option>
                     ))}
                 </select>
@@ -85,7 +85,7 @@ function ProductFilter() {
                     <option value="">Category</option>
                     {categories.map(category => (
                         <option key={category} value={category}>
-                            {category}
+                            {category || 'All'}
                         </option>
                     ))}
                 </select>
