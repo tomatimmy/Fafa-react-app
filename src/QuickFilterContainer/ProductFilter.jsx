@@ -3,10 +3,10 @@ import { getProducts } from "../asyncmock";
 import "./QuickFilter.css"
 
 
-const genders = ['', 'Male', 'Female'];
-const sizes = ['', 'Small', 'Medium', 'Large', 'Extra-large'];
-const colors = ['', 'Red', 'Blue', 'Black', 'Green'];
-const categories = ['', 'Hoodies', 'Bags', 'Shirts', 'Sweatshirts', 'Hats']
+const genders = ['', '--------', 'Male', 'Female'];
+const sizes = ['', '--------', 'Small', 'Medium', 'Large', 'Extra-large'];
+const colors = ['', '--------', 'Red', 'Blue', 'Black', 'Green'];
+const categories = ['', '--------', 'Hoodies', 'Bags', 'Shirts', 'Sweatshirts', 'Hats']
 const likeBtn = "https://cdn-icons-png.flaticon.com/512/54/54966.png";
 
 function ProductFilter() {
@@ -27,10 +27,10 @@ function ProductFilter() {
 
     const filteredProducts = products.filter(product => {
         return (
-            (selectedFilters.gender === '' || selectedFilters.gender === product.gender) &&
-            (selectedFilters.size === '' || selectedFilters.size === product.size) &&
-            (selectedFilters.color === '' || selectedFilters.color === product.color) &&
-            (selectedFilters.category === '' || selectedFilters.category === product.category)
+            (selectedFilters.gender === '' || selectedFilters.gender === product.gender || selectedFilters.gender === '--------') &&
+            (selectedFilters.size === '' || selectedFilters.size === product.size || selectedFilters.size === '--------') &&
+            (selectedFilters.color === '' || selectedFilters.color === product.color || selectedFilters.color === '--------') &&
+            (selectedFilters.category === '' || selectedFilters.category === product.category || selectedFilters.category === '--------')
         );
     });
 
@@ -107,7 +107,7 @@ function ProductFilter() {
                                 <h4 className="productColor">{product.color}</h4>
                             </div>
                             <div className="priceContainer">
-                                <h3 className="productSale">Sale</h3>
+                                <h3 className="productSale">{product.gender}</h3>
                                 <h4 className="productPrice">$ {product.price}</h4>
                             </div>
                         </div>

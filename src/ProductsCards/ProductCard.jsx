@@ -3,7 +3,7 @@ import './ProductCard.css'
 const ProductCard = ({ id, price, name, img, color }) => {
     const likeBtn = "https://cdn-icons-png.flaticon.com/512/54/54966.png";
     return (
-        <div className="card">
+        <div className="card" key={id}>
             <div className="saleContainer">
                 <p>Sale</p>
             </div>
