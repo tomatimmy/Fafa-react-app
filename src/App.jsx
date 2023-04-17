@@ -5,7 +5,6 @@ import Postheader from "./Postheader/Postheader";
 import Postheader2 from "./Postheader2/Postheader2";
 import VideoContainer from "./VideoContainer/VideoContainer";
 import VideoButton from "./VideoButton/VideoButton";
-import QuickFilter from "./QuickFilterContainer/QuickFilter";
 import Hr from "./Hr/Hr";
 import Chargehope from "./ChargehopeContainer/Chargehope";
 import Footer from "./FooterContainer/Footer";
@@ -13,6 +12,8 @@ import CategoriesHome from "./CategoriesContainer/CategoriesHome";
 import CategoriesHomeB from "./CategoriesContainerB/CategoriesHomeB";
 import SectionH2 from "./SectionH2/SectionH2"
 import ProductCardsContainer from "./ProductCardsContainer/ProductCardsContainer";
+import ProductFilter from "./QuickFilterContainer/ProductFilter";
+
 
 function App() {
   return (
@@ -24,8 +25,7 @@ function App() {
       <VideoContainer />
       <VideoButton />
       <Hr />
-      <QuickFilter />
-      <ProductCardsContainer />
+      <ProductFilter />
       <SectionH2 content="FaFa categories" />
       <CategoriesHome />
       <Chargehope />

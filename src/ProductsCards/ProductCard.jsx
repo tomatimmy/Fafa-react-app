@@ -1,9 +1,8 @@
 import './ProductCard.css'
 
-const ProductCard = ({id, price, name, img}) => {
+const ProductCard = ({ id, price, name, img, color }) => {
     const likeBtn = "https://cdn-icons-png.flaticon.com/512/54/54966.png";
-  return (
-    // <div className="productCardContainer">
+    return (
         <div className="card">
             <div className="saleContainer">
                 <p>Sale</p>
@@ -15,7 +14,7 @@ const ProductCard = ({id, price, name, img}) => {
             <div className="productNameSaleContainer">
                 <div className="productNameTitleContainer">
                     <h3 className="productNameTitle">{name}</h3>
-                    <h4 className="productColor">{id}</h4>
+                    <h4 className="productColor">{color}</h4>
                 </div>
                 <div className="priceContainer">
                     <h3 className="productSale">Sale</h3>
@@ -23,8 +22,7 @@ const ProductCard = ({id, price, name, img}) => {
                 </div>
             </div>
         </div>
-    // </div>
-  )
+    )
 }
 
 export default ProductCard
