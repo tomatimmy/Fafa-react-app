@@ -19,6 +19,7 @@ header {
 ul {
     display: flex;
     flex-wrap: row;
+    justify-content: center;
 }
 
 li {

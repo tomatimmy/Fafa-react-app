@@ -91,7 +91,7 @@ function ProductFilter() {
                 </select>
             </div>
 
-            <ul>
+            <div className="filteredProductsContainer">
                 {filteredProducts.map((product) => (
                     <div className="card" key={product.id}>
                         <div className="saleContainer">
@@ -113,7 +113,7 @@ function ProductFilter() {
                         </div>
                     </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }

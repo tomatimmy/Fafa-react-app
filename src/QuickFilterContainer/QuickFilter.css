@@ -11,3 +11,10 @@ select {
     width: 15%;
     height: 5vh;
 }
+
+.filteredProductsContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
