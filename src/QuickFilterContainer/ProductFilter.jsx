@@ -19,20 +19,27 @@ function ProductFilter() {
 
     const [products, setProducts] = useState([]);
 
+    const [firstTime, setFirstTime] = useState(true)
+
     useEffect(() => {
         getProducts()
             .then(response => setProducts(response))
             .catch(error => console.error(error))
-    })
+        })
+        
+
 
     const filteredProducts = products.filter(product => {
+        if (firstTime) {
+            return (product.special === 'yes');
+        } else {
         return (
             (selectedFilters.gender === '' || selectedFilters.gender === product.gender || selectedFilters.gender === '--------') &&
             (selectedFilters.size === '' || selectedFilters.size === product.size || selectedFilters.size === '--------') &&
             (selectedFilters.color === '' || selectedFilters.color === product.color || selectedFilters.color === '--------') &&
             (selectedFilters.category === '' || selectedFilters.category === product.category || selectedFilters.category === '--------')
         );
-    });
+    }});
 
     return (
         <div>
@@ -40,7 +47,10 @@ function ProductFilter() {
                 <select
                     value={selectedFilters.gender}
                     onChange={e =>
-                        setSelectedFilters({ ...selectedFilters, gender: e.target.value })
+                        {
+                            (firstTime && setFirstTime(false))
+                            setSelectedFilters({ ...selectedFilters, gender: e.target.value })
+                        }
                     }
                 >
                     <option value="">Gender</option>
@@ -53,7 +63,10 @@ function ProductFilter() {
                 <select
                     value={selectedFilters.size}
                     onChange={e =>
-                        setSelectedFilters({ ...selectedFilters, size: e.target.value })
+                        {
+                            (firstTime && setFirstTime(false))
+                            setSelectedFilters({ ...selectedFilters, size: e.target.value })
+                        }
                     }
                 >
                     <option value="">Size</option>
@@ -66,7 +79,10 @@ function ProductFilter() {
                 <select
                     value={selectedFilters.color}
                     onChange={e =>
-                        setSelectedFilters({ ...selectedFilters, color: e.target.value })
+                        {
+                            (firstTime && setFirstTime(false))
+                            setSelectedFilters({ ...selectedFilters, color: e.target.value })
+                        }
                     }
                 >
                     <option value="">Color</option>
@@ -79,7 +95,10 @@ function ProductFilter() {
                 <select
                     value={selectedFilters.category}
                     onChange={e =>
-                        setSelectedFilters({ ...selectedFilters, category: e.target.value })
+                        {
+                            (firstTime && setFirstTime(false))
+                            setSelectedFilters({ ...selectedFilters, category: e.target.value })
+                        }
                     }
                 >
                     <option value="">Category</option>
@@ -95,7 +114,7 @@ function ProductFilter() {
                 {filteredProducts.map((product) => (
                     <div className="card" key={product.id}>
                         <div className="saleContainer">
-                            <p>Sale</p>
+                            {product.special==='yes' && <p>Sale</p>}
                         </div>
                         <div className="likeBtnCardContainer">
                             <img className="likeBtnCard" src={likeBtn} alt="" />
