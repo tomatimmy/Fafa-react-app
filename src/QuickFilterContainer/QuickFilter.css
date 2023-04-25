@@ -15,5 +15,6 @@ select {
 .filteredProductsContainer{
     display: flex;
     flex-wrap: wrap;
+    height: auto;
 
 }

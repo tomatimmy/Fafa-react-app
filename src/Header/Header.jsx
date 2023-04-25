@@ -1,4 +1,5 @@
 import './Header.css';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
     const logo = "https://fa-fa.ch/storage/images/Ohne%2520Titel%2520(110%2520x%252036%2520mm)%2520(19).png?hash=c2c2620baa98f1f4f508639317eb32c5e40925a2&height=200&width=2560&shop=184078"
@@ -8,14 +9,14 @@ const Header = () => {
     return (
         <header>
             <div className="logo">
-                <img className="imageLogo" src={logo} alt="" />
+                <Link to={'/'}><img className="imageLogo" src={logo} alt="" /></Link>
             </div>
             <div>
                 <nav className="navbar">
                     <ul>
-                        <li><h2>New</h2></li>
-                        <li><h2>Men</h2></li>
-                        <li><h2>Women</h2></li>
+                        <NavLink to={'/'}><li><h2>Home</h2></li></NavLink>
+                        <NavLink to={'/men'}><li><h2>Men</h2></li></NavLink>
+                        <NavLink to={'/women'}><li><h2>Women</h2></li></NavLink>
                         <li><h2>Bags</h2></li>
                         <li><h2>Accesories</h2></li>
                     </ul>

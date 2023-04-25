@@ -1,4 +1,8 @@
 .productsCardList {
     display: flex;
     flex-direction: row;
+    gap: 2rem;
+    margin: 0px 0rem;
+    align-items: center;
+    justify-content: center;
 }

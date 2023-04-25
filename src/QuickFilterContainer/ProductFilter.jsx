@@ -31,7 +31,7 @@ function ProductFilter() {
 
     const filteredProducts = products.filter(product => {
         if (firstTime) {
-            return (product.special === 'yes');
+            return (product.special === true);
         } else {
         return (
             (selectedFilters.gender === '' || selectedFilters.gender === product.gender || selectedFilters.gender === '--------') &&
@@ -42,7 +42,7 @@ function ProductFilter() {
     }});
 
     return (
-        <div>
+        <div className="contenedorProductFilter">
             <div className="contenedorQuickFilter">
                 <select
                     value={selectedFilters.gender}
@@ -114,7 +114,7 @@ function ProductFilter() {
                 {filteredProducts.map((product) => (
                     <div className="card" key={product.id}>
                         <div className="saleContainer">
-                            {product.special==='yes' && <p>Sale</p>}
+                            {product.special===true && <p>Sale</p>}
                         </div>
                         <div className="likeBtnCardContainer">
                             <img className="likeBtnCard" src={likeBtn} alt="" />
