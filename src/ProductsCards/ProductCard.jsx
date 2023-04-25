@@ -1,11 +1,11 @@
 import './ProductCard.css'
 
-const ProductCard = ({ id, price, name, img, color }) => {
+const ProductCard = ({ id, price, name, img, color, special }) => {
     const likeBtn = "https://cdn-icons-png.flaticon.com/512/54/54966.png";
     return (
         <div className="card" key={id}>
             <div className="saleContainer">
-                <p>Sale</p>
+                {special === true && <p>Sale</p>}
             </div>
             <div className="likeBtnCardContainer">
                 <img className="likeBtnCard" src={likeBtn} alt="" />

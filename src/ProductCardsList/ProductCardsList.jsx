@@ -4,7 +4,7 @@ import ProductCard from '../ProductsCards/ProductCard'
 const ProductCardsList = ({products}) => {
   return (
     <div className="productsCardList">
-        {products.map(prod => <ProductCard key={prod.id} {...prod}/>)}
+        {products.filter(el => el.special === true).map(prod => <ProductCard key={prod.id} {...prod}/>)}
     </div>
   )
 }
