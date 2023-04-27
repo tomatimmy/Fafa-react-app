@@ -4,7 +4,7 @@ const MenLandingPage = () => {
   const filtroMen = {gender: 'Male',
   size: '',
   color: '',
-  category: ''
+  categorie: ''
 }
   return (
     <>

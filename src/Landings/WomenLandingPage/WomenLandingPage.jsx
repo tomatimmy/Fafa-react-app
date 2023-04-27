@@ -4,7 +4,7 @@ const WomenLandingPage = () => {
   const filtroWomen = {gender: 'Female',
   size: '',
   color: '',
-  category: ''
+  categorie: ''
 }
   return (
     <>

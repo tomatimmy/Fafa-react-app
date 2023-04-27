@@ -3,9 +3,9 @@ import { getProducts } from "../asyncmock";
 import "./QuickFilter.css"
 
 
-const genders = ['', '--------', 'Male', 'Female'];
+const genders = ['', '--------', 'Male', 'Female', 'Unisex'];
 const sizes = ['', '--------', 'Small', 'Medium', 'Large', 'Extra-large'];
-const colors = ['', '--------', 'Red', 'Blue', 'Black', 'Green'];
+const colors = ['', '--------', 'Blue', 'Black', 'Forest Green', 'Burgund', 'Gray', 'White', 'Cream White', 'Salbei', 'Rosa'];
 const categories = ['', '--------', 'Hoodies', 'Bags', 'Shirts', 'Sweatshirts', 'Hats']
 const likeBtn = "https://cdn-icons-png.flaticon.com/512/54/54966.png";
 
@@ -65,6 +65,21 @@ function ProductFilter(props) {
                     ))}
                 </select>
                 <select
+                    value={selectedFilters.categorie}
+                    onChange={e => {
+                        (firstTime && setFirstTime(false))
+                        setSelectedFilters({ ...selectedFilters, categorie: e.target.value })
+                    }
+                    }
+                >
+                    <option value="">Categorie</option>
+                    {categories.map(categorie => (
+                        <option key={categorie} value={categorie}>
+                            {categorie || 'All'}
+                        </option>
+                    ))}
+                </select>
+                <select
                     value={selectedFilters.size}
                     onChange={e => {
                         (firstTime && setFirstTime(false))
@@ -94,21 +109,6 @@ function ProductFilter(props) {
                         </option>
                     ))}
                 </select>
-                <select
-                    value={selectedFilters.categorie}
-                    onChange={e => {
-                        (firstTime && setFirstTime(false))
-                        setSelectedFilters({ ...selectedFilters, categorie: e.target.value })
-                    }
-                    }
-                >
-                    <option value="">Categorie</option>
-                    {categories.map(categorie => (
-                        <option key={categorie} value={categorie}>
-                            {categorie || 'All'}
-                        </option>
-                    ))}
-                </select>
             </div>
 
             <div className="filteredProductsContainer">
@@ -127,7 +127,7 @@ function ProductFilter(props) {
                                 <h4 className="productColor">{product.color} / {product.size}</h4>
                             </div>
                             <div className="priceContainer">
-                                <h3 className="productSale">{product.gender}</h3>
+                                <h3 className="productSale">$ {Math.floor(product.price * 0.85)}</h3>
                                 <h4 className="productPrice">$ {product.price}</h4>
                             </div>
                         </div>
