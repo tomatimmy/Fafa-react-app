@@ -1,5 +1,5 @@
 import React from 'react';
-import './Productpage.css'; // import the CSS file
+import './Productpage.css';
 
 const Productpage = () => {
     return (
